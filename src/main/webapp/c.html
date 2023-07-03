@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVENTURE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body onload='if (window.location.href.substr(window.location.href.length - 6) == "#about") { introAboutLogoTransition(); }'>
+    <!--navbar-->
+    <nav class="navbar glass" style="height: 70px;">
+        <span><a href="#home" style="display:flex; align-items: center;"><img class="img2" src="data:image/jpeg;base64,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" width="40"
+            style="margin: -25px -10px -25px -20px"><h1 class="logo">&nbsp;ADVENTURE</h1></a></span>
+        <ul class="nav-links">
+            <li><a href="#home" id="pri" class="active cir_border">Home</a></li>
+            <li><a href="#events"  id="sec" class="cir_border">Tours</a></li>
+            <li><a href="#explore" id="tri" class="cir_border">Explore</a></li>
+            <li><a href="#about" id="quad" class="cir_border">About</a></li>
+            <li><a href="#contribution" id="quint" class="cir_border">Contributions</a></li>
+            <li><a href="#contact" id="hex" class="cir_border">Contact</a></li>
+            <li><div>
+                <input type="checkbox" class="checkbox dark" id="checkbox">
+              <label for="checkbox" class="label">
+                <i class="fa fa-moon-o"></i>
+                <i class='fa fa-sun-o'></i>
+                <div class='ball'>
+              </label>
+            </div></li>
+        </ul>
+        <img src="data:image/jpeg;base64,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" alt="" class="menu-btn">
+    </nav>
+    <!--navbar-->
+
+    <header id="home">
+        <div class="header-content">
+            <h2  id="quote">Explore the colourful World</h2>
+            <div class="line"></div>
+            <h1 >A WONDERFUL GIFT </h1>
+            <a href="#about" class="ctn" onclick='removeall(); $("#quad").css("border", "2px solid whitesmoke"); $("#quad").css("border-radius", "20px");'>Learn more</a>
+        </div>
+    </header>
+
+    <!--Events-->
+    <section class="events" id="events">
+        <div class="container">
+        <div class="title">
+            <h1 class="dark">Upcoming Events</h1>
+            <div class="line"></div>
+        </div>
+        <div class="row">
+            <article class="card col">
+                <img class="card-img" src="data:image/jpeg;base64,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">
+                <h4 class="dark">Everest camp trek</h4>
+                <p class="font-color">Everest base camp trek is without a doubt, one of the most renowned travel destinations in the world.</p>
+                <a href="#" class="ctn">All Details</a>
+            </article>
+            <article class="card col">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTNmeFnmx91t2cqxZNCCMrI4v-Mvrkc4UaeK0c6ntHg&s">
+                <h4 class="dark">Walking holidays</h4>
+                <p class="font-color">Join small guided group walks, enjoy a challenging trek, or a luxury private guided walk which can be made especially for you.</p>
+                <a href="#" class="ctn">All Details</a>
+            </article>
+            <article class="card col">
+                <img src="data:image/jpeg;base64,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">
+                <h4 class="dark">Honaavar Beaches</h4>
+                <p class="font-color">Diving in Andaman Beaches is exceptional. The costal belt surroundings is one of the richest coral reef ecosystems in the world.</p>
+                <a href="#" class="ctn">All Details</a>
+            </article>
+        </div>
+    </div>
+    </section>
+    <!--Events-->
+
+    <!--Explore-->
+    <section class="explore" id="explore">
+        <div class="explore-content">
+            <h1>EXPLORE THE WORLD</h1>
+            <div class="line"></div>
+            <p>“Travel makes one modest. You see what a tiny place you occupy in the world.”– Gustav Flaubert
+            </br>Exploring will make you want to pack your bag, book that ticket and jet away. </p>
+            <a href="#" class="ctn">Explore more</a>
+        </div>
+    </section>
+    <!--Explore-->
+
+    <!--tours-->
+    <section class="tours">
+        <div class="container row">
+            <div class="col content-col">
+                <h1 class="font-color">UPCOMING TOURS & DESTINATION</h1>
+                <div class="line"></div>
+                <p>Wed 28 sept 2023 : Port of Spain City Tour and Birdseye Fort View. </br>
+                   Sat 1 oct 2023 : Tour the Gasparee Caves.</br>
+                   Tues 4 oct 2023 : Trinidad North Coast Experience. </br> 
+                    and many more ......
+                 </p>
+                <a href="#" class="ctn">Learn more</a>
+            </div>
+            <div class="image-col">
+                <div class="image-gallery">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWLUeVs4fiuwIf7kxVVfzyr6RWHCNzS8BcwQ&usqp=CAU" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6kKQnOlXYU9k1TjiXI4EgI8PAItoctczpCg&usqp=CAU" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMbV_cqc5QneHCAodNeFf3yDaCXA3z1hnsBQ&usqp=CAU" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Fq9tBpiot09c9cWS_aB16funNqfpcRh4Dg&usqp=CAU" alt="">
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+    </section>
+    <!--tours-->
+
+    <!-- About -->
+    <section id="about">
+        <div class="title">
+            <h1 class="font-color">About Us</h1>
+            <div class="line"></div>
+        </div>
+        <br>
+        <div id="about_us">
+            <div class="boxx">
+                <div class="containerx">
+					<input type="radio" name="slider" id="item-1" checked>
+					<input type="radio" name="slider" id="item-2">
+					<input type="radio" name="slider" id="item-3">
+				  <div class="cards">
+					<label class="cardt" for="item-1" id="col-img-1">
+					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BWqDHqRGR-vQAACl_jg4klB5rp0MzFLcUA&usqp=CAU">
+					</label>
+					<label class="cardt" for="item-2" id="col-img-2">
+					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4aHykh0Plqp6Xa6aIvYLRECc7q6vM0ndA8Q&usqp=CAU">
+					</label>
+					<label class="cardt" for="item-3" id="col-img-3">
+					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Q2h4DZFl7s4iMvMeXQKDcUakfXB-PyYhbA&usqp=CAU">
+					</label>
+				  </div>
+				</div>
+                <span id="about-quad"><a href="#home"><center><h1 style="font-family: var(--ff-montserrat); color: white;">Find that</h1><br><img class="img2" src="./img/mountain_dark.jpg" width="200" style="border-radius: 12%;"><br><h1 class="logo" style="font-size: 50px;">ADVENTURE</h1></a></center></span>
+            </div>
+        </div>
+    </section>
+    <!-- About -->
+
+    <!-- Contributions -->
+    <div class="title">
+        <h1 class="font-color">Contributors</h1>
+        <div class="line"></div>
+    </div>
+    <section class="contributors" id="contribution">
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Q2h4DZFl7s4iMvMeXQKDcUakfXB-PyYhbA&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Pritam Sarbajna</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/PritamSarbajna" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVrmktUiJh8cHaUrleVe-EXBzxItzcXQumog&usqp=CAU"
+                        alt="Github-Logo" class="github-logo"></a>
+            </div>
+        </div>
+
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqEt4TkPbWVDBMEpd6ZMQjK_e_Yp1qrbg2eg&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Prakhar Tiwari</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/prakhartiwari0" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefYSCRI2wTcY4kNx4UQkpQHgvPhInn3kBAA&usqp=CAU"
+                        alt="Github-Logo" class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgk7cmdtl2A_PSYU7-WHxT8LrVxTOAURDbbg&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Hassana Abdullahi</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/hassana123" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_VE7xKYH9yPvv6VAJLDRbdkwwMxrJKAIj4Q&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2DdF0inmKgDhVNq5_JtUte1DNePNJkxsgEA&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Olumese Steve-John</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/JumaCodes" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy8g0jy7pLitsce7B-7YmZ37TuZ6CwL8s9aQ&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBYHbedZ8Ne7ypG_3Oj4L8t1W585jXQH5QvA&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Lubna Fathima N</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/lubnafathima" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuS1D8PW88_GZuGCUFy9eh7GOd9dR6rPk04Q&usqp=CAU"
+                        alt="Github-Logo" class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQr_0Olesx8L1ll7qF6PivnfbCOpYdj39mqw&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Allan</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/allanlalangan" target="_blank"><img src="https://c8.alamy.com/comp/2M46Y1Y/sharavathi-kandla-mangrove-kasarkod-honnavar-karnataka-india-2M46Y1Y.jpg"
+                        alt="Github-Logo" class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb0G43uljqRVI7Ikp2Bo7bLKxLcii45sEdJg&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Mayowa Ojo</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/Seyi-Ojo" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7wliDCXh0mHP0mxhP4o9GbgYpqOHXu_mKg&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvxzIb4Fkw6UM-S0X6fA2XOOMCSOMgFWiv8g&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Amit Barman</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/AmitBarman99" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvxzIb4Fkw6UM-S0X6fA2XOOMCSOMgFWiv8g&usqp=CAU"
+                        alt="Github-Logo" class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTsv-ZvP6ALdvVM60oXskkOZYq-SA11m6eg&usqp=CAU" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Partha Turja</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/ppdTurja" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSswZx8EpyIOk1n6tD8VGM30GxA7_xH6q9_Fg&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+        
+
+        <div class="concard">
+            <img src="https://github.com/Brainiac-M.png" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Mahmood Ademoye</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/Brainiac-M" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7wliDCXh0mHP0mxhP4o9GbgYpqOHXu_mKg&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+
+        <div class="concard">
+            <img src="https://github.com/abitsalihu.png" alt="profile-picture" class="pfp">
+            <div class="text">
+                <h1>Abit Salihu</h1>
+            </div>
+            <div class="logolink">
+                <a href="https://github.com/abitsalihu" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC7wliDCXh0mHP0mxhP4o9GbgYpqOHXu_mKg&usqp=CAU" alt="Github-Logo"
+                        class="github-logo"></a>
+            </div>
+        </div>
+
+    </section>
+    <!-- Contributions -->
+
+
+
+    <!-- contact -->
+    <section id="contact">
+        <div class="title">
+            <h1 class="font-color">Contact Us</h1>
+            <div class="line"></div>
+        </div>
+        <div class="contact_us">
+            <form class="cform" action="" method="post">
+                <div class="crow-message">
+                    <h1 class="color">Send us a message</h1>
+                    <div></div>
+                </div>
+                <div class="crow-in">
+                        <input type="text" id="name" name="name" placeholder="Your name">
+                        <input type="text" id="email" name="email" placeholder="Your Email id">
+                </div>
+                <div class="crow">
+                    <div class="ccol-left">
+                        <select name="country" id="country">
+                            <option value="India">India</option>
+                            <option value="Russia">Russia</option>
+                            <option value="usa">USA</option>
+                            <option value="Japan">Japan</option>
+                            <option value="France">France</option>
+                            <option value="Brazil">Brazil</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="crow">
+                    <div class="ccol-left">
+                        <textarea type="text" id="remarks" name="remarks" placeholder="Your Remarks....." style="height: 150px;"></textarea>
+                    </div>
+                </div>
+                <input class="crow-s" type="submit" value="Submit">
+            </form>
+            <div class="cbox">
+                <div>
+                    <p class="cbox-message">Prefer some other way ?<br>Reach us by using the details given below</p>
+                <div class="cbox-line"></div>
+                </div>
+                <div class="c_boxx">
+                    <a href="mailto:abc@gmail.com"><i class="fa fa-envelope"></i>
+                        Mail: tourism@adventure.com
+                    </a>
+                </div>
+                <div class="c_boxx">
+                    <a href="tel:+91-12345-67890"><i class="fa fa-phone"></i>
+                        Phone: (+91) 12345-67890
+                    </a>
+                </div>
+                <div class="c_boxx">
+                    <a href="#"><i class="fa fa-map-marker"></i>
+                        Location: Kolkata,West Bengal,India
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact  -->
+    <!-- up scroll -->
+    <i class="fa fa-chevron-up" onclick="topFunction()" id="upbtn"></i>
+    <!-- end -->
+    <!--footer-->
+    <section class="footer">
+        <span>Created By Pritam Sarbajna | &#169 2022 All rights reserved.</span>
+        <div class="social">
+            <li>
+                <a href="https://pritam-sarbajna-portfolio.netlify.app/" target="_blank" rel="noreferrer"><i class="fa fa-globe"></i></a>
+                <a href="https://github.com/PritamSarbajna" target="_blank" rel="noreferrer"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pritam-sarbajna-74945821b/" target="_blank" rel="noreferrer"><i class="fa fa-linkedin-square"></i></a>
+            </li>
+        </div>
+    </section>
+    <!--footer-->
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn')
+        const navlinks = document.querySelector('.nav-links')
+
+        menuBtn.addEventListener('click',()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
